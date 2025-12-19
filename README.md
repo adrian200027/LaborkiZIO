@@ -1,3 +1,3 @@
 # LaborkiZIO
 SuperLaborki
-Test repozytorium 2 - laboratorium Git
+Test repozytorium 3 - laboratorium Git 
