@@ -1,3 +1,3 @@
 # LaborkiZIO
 SuperLaborki
-Super Zmiana
+super zmiana
