@@ -24,7 +24,8 @@ jobs:
         run: semgrep --validate --config .semgrep-ci.yml
 
       - name: Run Semgrep (fail on findings) + SARIF
-        run: semgrep scan --config .semgrep-ci.yml --sarif --output semgrep.sarif --error .
+        run: semgrep scan --config .semgrep-ci.yml --sarif --output semgrep.sarif --error . --exclude .semgrep-ci.yml
+
 
 
 
