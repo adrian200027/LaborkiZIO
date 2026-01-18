@@ -1,6 +1,6 @@
 rules:
   - id: ci.demo.marker
-    message: "Przeszło (celowo do zielonego CI)."
+    message: "Znaleziono CI_DEMO_FAIL (celowo do czerwonego CI)."
     languages: [generic]
-    severity: TRUE
-    pattern: brak
+    severity: ERROR
+    pattern: CI_DEMO_FAIL
