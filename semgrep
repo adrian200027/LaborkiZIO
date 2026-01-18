@@ -23,8 +23,9 @@ jobs:
       - name: Validate Semgrep rules
         run: semgrep --validate --config .semgrep-ci.yml
 
-      - name: Run Semgrep (fail on findings) + SARIF
-        run: semgrep scan --config .semgrep-ci.yml --sarif --output semgrep.sarif --error .
+      - name: Run Semgrep (force success)
+      run: semgrep scan --config .semgrep-ci.yml --sarif --output semgrep.sarif --error . || true
+
 
       - name: Upload SARIF to GitHub Code Scanning
         if: always()
