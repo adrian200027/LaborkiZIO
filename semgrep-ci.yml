@@ -1,6 +1,0 @@
-rules:
-  - id: ci.demo.marker
-    pattern: CI_FAIL_DEMO
-    message: "Znaleziono CI_FAIL_DEMO (celowo do pokazania czerwonego CI)."
-    languages: [generic]
-    severity: ERROR
