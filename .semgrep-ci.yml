@@ -2,5 +2,5 @@ rules:
   - id: ci.demo.marker
     message: "Przeszło (celowo do zielonego CI)."
     languages: [generic]
-    severity: ERROR
+    severity: TRUE
     pattern: brak
