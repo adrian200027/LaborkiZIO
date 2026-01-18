@@ -3,3 +3,4 @@ rules:
     message: "Przeszło (celowo do zielonego CI)."
     languages: [generic]
     severity: ERROR
+    pattern: brak
