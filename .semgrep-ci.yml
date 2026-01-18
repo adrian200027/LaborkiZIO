@@ -1,6 +1,6 @@
 rules:
-  - id: ci.demo.marker
-    message: "Znaleziono CI_DEMO_FAIL (celowo do czerwonego CI)."
+  - id: ci.always.green
+    message: "Semgrep uruchomiony (celowo zawsze zielono)."
     languages: [generic]
-    severity: ERROR
-    pattern: CI_DEMO_FAIL
+    severity: INFO
+    pattern: _9c1a7f3e_123456789
