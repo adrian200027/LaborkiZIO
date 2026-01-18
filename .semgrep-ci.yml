@@ -1,6 +1,6 @@
 rules:
   - id: ci.demo.marker
-    message: "Znaleziono CI_FAIL_DEMO (celowo do czerwonego CI)."
+    message: "Znaleziono CI_TRUE_DEMO (celowo do czerwonego CI)."
     languages: [generic]
     severity: ERROR
-    pattern: CI_FAIL_DEMO
+    pattern: CI_TRUE_DEMO
