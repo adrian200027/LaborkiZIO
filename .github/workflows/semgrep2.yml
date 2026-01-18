@@ -1,0 +1,35 @@
+name: CI - Static Analysis (Semgrep)
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Semgrep
+        run: |
+          python -m pip install --upgrade pip
+          pip install semgrep
+
+      - name: Validate Semgrep rules
+        run: semgrep --validate --config .semgrep-ci.yml
+
+      - name: Run Semgrep (fail on findings) + SARIF
+        run: semgrep scan --config .semgrep-ci.yml --sarif --output semgrep.sarif --error . --exclude .semgrep-ci.yml --exclude semgrep.sarif
+
+      - name: Upload SARIF to GitHub Code Scanning
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: semgrep.sarif
